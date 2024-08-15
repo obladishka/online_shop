@@ -1,5 +1,6 @@
 class Category:
     """Class for creating product categories."""
+
     name: str
     description: str
     products: list
