@@ -35,3 +35,18 @@ def tv_sets():
             Product('55" QLED 4K', "Backlight", 210000.0, 8),
         ],
     )
+
+
+@pytest.fixture
+def json_data():
+    [
+        {
+            "name": "Смартфоны",
+            "description": "Смартфоны, как средство не только коммуникации, "
+            "но и получение дополнительных функций для удобства жизни",
+            "products": [
+                {"name": "Iphone 15", "description": "512GB, Gray space", "price": 210000.0, "quantity": 8},
+                {"name": "Xiaomi Redmi Note 11", "description": "1024GB, Синий", "price": 31000.0, "quantity": 14},
+            ],
+        },
+    ]
