@@ -39,7 +39,7 @@ def tv_sets():
 
 @pytest.fixture
 def json_data():
-    [
+    return [
         {
             "name": "Смартфоны",
             "description": "Смартфоны, как средство не только коммуникации, "
