@@ -30,7 +30,7 @@ def smartphones():
 def tv_sets():
     return Category(
         "TV sets",
-        "A modern TV that allows you to enjoy watching",
+        "Modern TVs that allow you to enjoy watching",
         [
             Product('55" QLED 4K', "Backlight", 210000.0, 8),
         ],
