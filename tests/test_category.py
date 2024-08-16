@@ -11,10 +11,10 @@ def test_category_init(smartphones, tv_sets):
     assert tv_sets.description == "Modern TVs that allow you to enjoy watching"
     assert len(tv_sets.products) == 1
 
-    assert smartphones.categories_quantity == 2
-    assert tv_sets.categories_quantity == 2
-    assert Category.categories_quantity == 2
+    assert smartphones.category_count == 2
+    assert tv_sets.category_count == 2
+    assert Category.category_count == 2
 
-    assert smartphones.products_quantity == 3
-    assert tv_sets.products_quantity == 3
-    assert Category.products_quantity == 3
+    assert smartphones.product_count == 3
+    assert tv_sets.product_count == 3
+    assert Category.product_count == 3
