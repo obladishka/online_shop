@@ -15,7 +15,7 @@ def test_read_json(mock_open, mock_load, json_data):
 def test_create_obj_from_json(json_data, product_1, product_2):
     """Testing dynamic objects creation."""
     assert create_obj_from_json(json_data)[0].name == "Смартфоны"
-    assert len(create_obj_from_json(json_data)[0].products) == 2
+    assert len(create_obj_from_json(json_data)[0].products_list) == 2
 
-    assert create_obj_from_json(json_data)[0].products[0].name == product_1.name
-    assert create_obj_from_json(json_data)[0].products[1].description == product_2.description
+    assert create_obj_from_json(json_data)[0].products_list[0].name == product_1.name
+    assert create_obj_from_json(json_data)[0].products_list[1].description == product_2.description
