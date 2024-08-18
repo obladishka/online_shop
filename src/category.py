@@ -33,3 +33,8 @@ class Category:
             f"{product.name}, {int(product.price)} RUB. Balance: {product.quantity} pcs."
             for product in self.__products
         )
+
+    @property
+    def products_list(self):
+        """Method for returning products list in a list form."""
+        return self.__products
