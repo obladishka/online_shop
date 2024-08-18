@@ -9,6 +9,7 @@ class Product:
     products = []
 
     def __init__(self, name, description, price, quantity):
+        """Product initialization. Parameters needed: product name, description, price and quantity."""
         self.name = name
         self.description = description
         self.__price = price
@@ -17,6 +18,8 @@ class Product:
 
     @classmethod
     def new_product(cls, product: dict):
+        """Method for creating new products. If product already exists, its quantity increases by the quantity of
+        a newly added product. In case of price conflict, the price is set on a level of a higher one."""
 
         if sorted(product.keys()) == ["description", "name", "price", "quantity"]:
 
@@ -36,10 +39,13 @@ class Product:
 
     @property
     def price(self):
+        """Method for product price returning."""
         return self.__price
 
     @price.setter
     def price(self, price):
+        """Method for setting new product price. In case the new price is lower than a current one,
+        additional confirmation is needed."""
 
         if price <= 0:
             print("Price should not be zero or negative")
