@@ -22,3 +22,10 @@ class Category:
     def add_product(self, product: Product):
         if type(product) is Product:
             self.__products.append(product)
+            Category.product_count += 1
+
+    @property
+    def products(self):
+        return "\n".join(
+            f"{product.name}, {int(product.price)}. Остаток: {product.quantity} шт." for product in self.__products
+        )
