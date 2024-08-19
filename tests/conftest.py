@@ -32,7 +32,7 @@ def tv_sets():
         "TV sets",
         "Modern TVs that allow you to enjoy watching",
         [
-            Product('55" QLED 4K', "Backlight", 210000.0, 8),
+            Product("55 QLED 4K", "Backlight", 210000.0, 8),
         ],
     )
 
