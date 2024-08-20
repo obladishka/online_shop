@@ -42,7 +42,7 @@ def test_add_product_wrong_type(smartphones):
 def test_products(smartphones):
     """Testing displaying of products in the list."""
     assert smartphones.products == (
-        "Iphone 15, 210000 RUB. Balance: 8 pcs.\n" "Xiaomi Redmi Note 11, 31000 RUB. Balance: 14 pcs."
+        "Iphone 15, 210000 руб. Остаток: 8 шт.\n" "Xiaomi Redmi Note 11, 31000 руб. Остаток: 14 шт."
     )
 
 
