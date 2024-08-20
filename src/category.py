@@ -30,7 +30,7 @@ class Category:
     def products(self):
         """Method for displaying products info in a string form."""
         return "\n".join(
-            f"{product.name}, {int(product.price)} RUB. Balance: {product.quantity} pcs."
+            f"{product.name}, {int(product.price)} руб. Остаток: {product.quantity} шт."
             for product in self.__products
         )
 
