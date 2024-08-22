@@ -29,10 +29,7 @@ class Category:
     @property
     def products(self):
         """Method for displaying products info in a string form."""
-        return "\n".join(
-            f"{product.name}, {int(product.price)} руб. Остаток: {product.quantity} шт."
-            for product in self.__products
-        )
+        return "\n".join(str(product) for product in self.__products)
 
     @property
     def products_list(self):

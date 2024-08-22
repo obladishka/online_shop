@@ -16,6 +16,10 @@ class Product:
         self.quantity = quantity
         self.products.append(self)
 
+    def __str__(self):
+        """Method for displaying info about a product."""
+        return f"{self.name}, {int(self.price)} руб. Остаток: {self.quantity} шт."
+
     @classmethod
     def new_product(cls, product: dict):
         """Method for creating new products. If product already exists, its quantity increases by the quantity of
