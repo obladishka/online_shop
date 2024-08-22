@@ -16,6 +16,48 @@ git clone https://github.com/obladishka/online_shop.git
 poetry intall
 ```
 
+## Usage
+
+The project consists of 2 classes: Product and Category.
+1. Creating product:
+```commandline
+product = Product(name: str, description: str, price: float, quantity: int)
+```
+2. Adding new product:
+```commandline
+product = {name: "product name", description: "product description", price: 10.0, quantity: 1}
+new_product = Product.new_product(product: dict)
+```
+In case a product with the same name already exists and there is no price conflict, its quantity will be increased 
+by the quantity of a newly added product. In case of price conflict, the higher price will be set and quantity will be 
+increased accordingly.
+3. Price setting:
+```commandline
+product.price = new price (float)
+```
+In case a new price is lower than the current one, additional confirmation is needed.
+
+Same products can be grouped in a Category.
+1. Creating category:
+```commandline
+category = Category(name: str, description: str, products: list)
+```
+2. Adding new products to a products list:
+```commandline
+category.add_product(product: Product)
+```
+**NOTE!** Only objets of Product class can be added.
+3. Getting information about products in the list in a convenient format:
+```commandline
+print(category.products)
+>>> Pruduct name, 10 RUB. Balance: 1 pcs.
+```
+4. Getting statistics information:
+```commandline
+print(category.category_count) # returns the number of all existing categories
+print(category.product_count) # returns the number of products in all categories (not counting quantity of each product)
+```
+
 ## Testing
 
 The code is 97% covered by Pytest unit tests. To run it write the following commands in your terminal:

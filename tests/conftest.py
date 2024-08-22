@@ -32,7 +32,7 @@ def tv_sets():
         "TV sets",
         "Modern TVs that allow you to enjoy watching",
         [
-            Product('55" QLED 4K', "Backlight", 210000.0, 8),
+            Product("55 QLED 4K", "Backlight", 210000.0, 8),
         ],
     )
 
@@ -50,3 +50,13 @@ def json_data():
             ],
         },
     ]
+
+
+@pytest.fixture
+def product_dict():
+    return {
+        "name": "Samsung Galaxy S23 Ultra",
+        "description": "256GB, Серый цвет, 200MP камера",
+        "price": 180000.0,
+        "quantity": 5,
+    }
