@@ -20,6 +20,12 @@ class Product:
         """Method for displaying info about a product."""
         return f"{self.name}, {int(self.price)} руб. Остаток: {self.quantity} шт."
 
+    def __add__(self, other):
+        """Method for calculating total price of products."""
+        if type(other) is Product:
+            return self.price * self.quantity + other.price * other.quantity
+        return "Only objects of Product class can be summed up."
+
     @classmethod
     def new_product(cls, product: dict):
         """Method for creating new products. If product already exists, its quantity increases by the quantity of
