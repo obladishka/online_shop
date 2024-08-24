@@ -36,6 +36,13 @@ increased accordingly.
 product.price = new price (float)
 ```
 In case a new price is lower than the current one, additional confirmation is needed.
+4. Calculating total price of 2 products:
+```commandline
+product_1 = Product("product_1 name", "product_1 description", 10.0, 1)
+product_2 = Product("product_2 name", "product_2 description", 20.0, 2)
+print(product_1 + product_2)
+>>> 50.0
+```
 
 Same products can be grouped in a Category.
 1. Creating category:
@@ -50,12 +57,17 @@ category.add_product(product: Product)
 3. Getting information about products in the list in a convenient format:
 ```commandline
 print(category.products)
->>> Pruduct name, 10 RUB. Balance: 1 pcs.
+>>> Product name, 10 руб. Остаток: 1 шт.
 ```
 4. Getting statistics information:
 ```commandline
 print(category.category_count) # returns the number of all existing categories
 print(category.product_count) # returns the number of products in all categories (not counting quantity of each product)
+```
+5. Dispaying information about category in a convenient format:
+```commandline
+print(category)
+>>> Category name, количество продуктов: 20 шт. # number of products in the category (counting quantity of each product)
 ```
 
 ## Testing
