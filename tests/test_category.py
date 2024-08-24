@@ -51,3 +51,8 @@ def test_products_list(tv_sets):
     assert type(tv_sets.products_list) is list
     assert len(tv_sets.products_list) == 1
     assert tv_sets.products_list[0].name == "55 QLED 4K"
+
+
+def test_category_str(smartphones):
+    """Testing category's information displaying."""
+    assert str(smartphones) == "Smartphones, количество продуктов: 22 шт."
