@@ -8,13 +8,12 @@ class ProductIterator:
 
     def __init__(self, category):
         """Object initialization. Parameters needed: object of Category class."""
-        if isinstance(category, Category):
-            self.category = category
+        self.category = category
 
     def __iter__(self):
         """Method for iterator creation."""
         self.index = -1
-        return self.category
+        return self
 
     def __next__(self):
         """Method for iteration."""
