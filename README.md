@@ -69,6 +69,16 @@ print(category.product_count) # returns the number of products in all categories
 print(category)
 >>> Category name, количество продуктов: 20 шт. # number of products in the category (counting quantity of each product)
 ```
+6. With a supportive class ProductIterator it's possible to iterate through products in products list:
+```commandline
+iterator = ProductIterator(category)
+for product in iterator:
+    print(product)
+    
+>>> product_1 name, 10 руб. Остаток: 1 шт.
+    product_2 name, 20 руб. Остаток: 2 шт.
+    ...
+```
 
 ## Testing
 
