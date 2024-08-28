@@ -25,7 +25,7 @@ class Product:
         if type(other) is self.__class__:
             return self.price * self.quantity + other.price * other.quantity
         else:
-            raise TypeError(f"Only objects of {self.__class__.name} class can be summed up.")
+            raise TypeError(f"Only objects of {self.__class__.__name__} class can be summed up.")
 
     @classmethod
     def new_product(cls, product: dict):

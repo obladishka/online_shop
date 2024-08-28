@@ -128,4 +128,6 @@ def test_product_add(product_1, product_2):
 )
 def test_product_add_wrong_type(product_1, product2):
     """Testing products' summation method when the second component is not a product."""
-    assert product_1 + product2 == "Only objects of Product class can be summed up."
+    with pytest.raises(TypeError) as ex:
+        result = product_1 + product2
+        assert ex == "Only objects of Product class can be summed up."
