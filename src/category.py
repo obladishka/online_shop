@@ -27,7 +27,7 @@ class Category:
 
     def add_product(self, product: Product):
         """Method for new products adding. Only products of Product class can be added."""
-        if type(product) is Product:
+        if isinstance(product, Product):
             self.__products.append(product)
             Category.product_count += 1
 
