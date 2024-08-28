@@ -19,7 +19,7 @@ def test_smartphones_summation(smartphone_1, smartphone_2):
 
 @pytest.mark.parametrize("other", ["product_1", "grass_1"])
 def test_smartphones_summation_wrong_type(smartphone_1, other):
-    """Testing normal work of summation method."""
+    """Testing summation method with different product types."""
     with pytest.raises(TypeError) as ex:
-        result = smartphone_1 + other
+        smartphone_1 + other
     assert str(ex.value) == "Only objects of Smartphone class can be summed up."
