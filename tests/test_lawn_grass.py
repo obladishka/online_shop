@@ -2,7 +2,7 @@ import pytest
 
 
 def test_lawn_grass_init(grass_1, grass_2):
-    """Testing smartphones' creation."""
+    """Testing grass creation."""
     assert grass_1.name == "Газонная трава"
     assert grass_1.country == "Россия"
     assert grass_1.germination_period == "7 дней"
