@@ -20,6 +20,11 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
+    def __str__(self):
+        """Method for displaying info about a category."""
+        quantity = sum(product.quantity for product in self.products_list)
+        return f"{self.name}, количество продуктов: {quantity} шт."
+
     def add_product(self, product: Product):
         """Method for new products adding. Only products of Product class can be added."""
         if type(product) is Product:
@@ -29,10 +34,7 @@ class Category:
     @property
     def products(self):
         """Method for displaying products info in a string form."""
-        return "\n".join(
-            f"{product.name}, {int(product.price)} руб. Остаток: {product.quantity} шт."
-            for product in self.__products
-        )
+        return "\n".join(str(product) for product in self.__products)
 
     @property
     def products_list(self):

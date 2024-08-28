@@ -101,3 +101,31 @@ def test_price_setter_lower_price_not_confirmed(mock_input, product_1):
     assert product_1.price == 210000.0
     product_1.price = 200000.0
     assert product_1.price == 210000.0
+
+
+def test_product_str(product_1):
+    """Testing product's information displaying."""
+    assert str(product_1) == "Iphone 15, 210000 руб. Остаток: 8 шт."
+
+
+def test_product_add(product_1, product_2):
+    """Testing normal work of summation method."""
+    assert product_1 + product_2 == 2114000.0
+
+
+@pytest.mark.parametrize(
+    "product2",
+    [
+        {
+            "name": "Samsung Galaxy S23 Ultra",
+            "description": "256GB, Серый цвет, 200MP камера",
+            "price": 180000.0,
+        },
+        "Samsung Galaxy S23 Ultra",
+        210000.0,
+        ("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14),
+    ],
+)
+def test_product_add_wrong_type(product_1, product2):
+    """Testing products' summation method when the second component is not a product."""
+    assert product_1 + product2 == "Only objects of Product class can be summed up."
