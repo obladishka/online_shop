@@ -30,6 +30,8 @@ class Category:
         if isinstance(product, Product):
             self.__products.append(product)
             Category.product_count += 1
+        else:
+            raise TypeError("Only objects of Product class can be added.")
 
     @property
     def products(self):
