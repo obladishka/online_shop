@@ -4,6 +4,10 @@ from src.product import Product
 class Smartphone(Product):
     """Class for creating smartphones."""
 
+    name: str
+    description: str
+    price: float
+    quantity: int
     efficiency: float
     model: str
     memory: int
