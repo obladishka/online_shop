@@ -32,7 +32,9 @@ class Product:
         """Method for creating new products. If product already exists, its quantity increases by the quantity of
         a newly added product. In case of price conflict, the price is set on a level of a higher one."""
 
-        if type(product) is dict and sorted(product.keys()) == ["description", "name", "price", "quantity"]:
+        if type(product) is dict and all(
+            i in sorted(product.keys()) for i in ["description", "name", "price", "quantity"]
+        ):
 
             if any(obj.name == product.get("name") for obj in cls.products):
 
