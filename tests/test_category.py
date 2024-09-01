@@ -1,3 +1,5 @@
+import pytest
+
 from src.category import Category
 
 
@@ -33,10 +35,9 @@ def test_add_product(smartphones, product_1):
 
 def test_add_product_wrong_type(smartphones):
     """Testing work of new product adding method when not a product is added (should not be added)."""
-    smartphones.add_product("some_product")
-    assert len(smartphones.products_list) == 2
-    assert smartphones.products_list[-1].name == "Xiaomi Redmi Note 11"
-    assert smartphones.products_list[-1].quantity == 14
+    with pytest.raises(TypeError) as ex:
+        smartphones.add_product("some_product")
+    assert str(ex.value) == "Only objects of Product class can be added."
 
 
 def test_products(smartphones):

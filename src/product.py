@@ -21,10 +21,11 @@ class Product:
         return f"{self.name}, {int(self.price)} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        """Method for calculating total price of products."""
-        if type(other) is Product:
+        """Method for calculating total price of same products."""
+        if type(other) is self.__class__:
             return self.price * self.quantity + other.price * other.quantity
-        return "Only objects of Product class can be summed up."
+        else:
+            raise TypeError(f"Only objects of {self.__class__.__name__} class can be summed up.")
 
     @classmethod
     def new_product(cls, product: dict):

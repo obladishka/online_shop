@@ -18,10 +18,17 @@ poetry intall
 
 ## Usage
 
-The project consists of 2 classes: Product and Category.
-1. Creating product:
+The project consists of 2 classes: Product and Category. There are 2 types of products: smartphones and loan grass.
+
+1. Creating product :
 ```commandline
-product = Product(name: str, description: str, price: float, quantity: int)
+product = Product(name="product name", description="product description", price=10.0, quantity=1)
+
+smartphone = Smartphone(name="Iphone 15", desctiption="512GB, Gray space", 
+price=210000.0, quantity=8, efficiency=98.2, model="15", memory=512, color="Gray space")
+
+grass = LawnGrass(name="Газонная трава", desctiption="Элитная трава для газона", 
+price=500.0, quantity=20, country="Россия", germination_period="7 дней", color="Зеленый")
 ```
 2. Adding new product:
 ```commandline
@@ -43,11 +50,12 @@ product_2 = Product("product_2 name", "product_2 description", 20.0, 2)
 print(product_1 + product_2)
 >>> 50.0
 ```
+**NOTE!** Only products of the same type can be summed up.
 
 Same products can be grouped in a Category.
 1. Creating category:
 ```commandline
-category = Category(name: str, description: str, products: list)
+category = Category(name="categoty name", description="category description", products=[product_1, product_2])
 ```
 2. Adding new products to a products list:
 ```commandline
