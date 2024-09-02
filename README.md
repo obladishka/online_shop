@@ -30,6 +30,7 @@ price=210000.0, quantity=8, efficiency=98.2, model="15", memory=512, color="Gray
 grass = LawnGrass(name="Газонная трава", desctiption="Элитная трава для газона", 
 price=500.0, quantity=20, country="Россия", germination_period="7 дней", color="Зеленый")
 ```
+Information about all newly created products is printed out to console.
 2. Adding new product:
 ```commandline
 product = {name: "product name", description: "product description", price: 10.0, quantity: 1}
