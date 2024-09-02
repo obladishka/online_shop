@@ -1,7 +1,8 @@
 from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
 
 
-class Product(BaseProduct):
+class Product(BaseProduct, PrintMixin):
     """Class for creating products."""
 
     name: str
@@ -18,6 +19,7 @@ class Product(BaseProduct):
         self.__price = price
         self.quantity = quantity
         self.products.append(self)
+        super().__repr__()
 
     def __str__(self):
         """Method for displaying info about a product."""
