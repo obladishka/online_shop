@@ -24,6 +24,7 @@ def zero_quantity_product():
 
 @pytest.fixture
 def smartphones():
+    Category.product_count = 0
     return Category(
         "Smartphones",
         "Smartphones that make your life better",
@@ -42,6 +43,15 @@ def tv_sets():
         [
             Product("55 QLED 4K", "Backlight", 210000.0, 8),
         ],
+    )
+
+
+@pytest.fixture
+def empty_category():
+    return Category(
+        "Empty category",
+        "Category wth no products",
+        [],
     )
 
 
