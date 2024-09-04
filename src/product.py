@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
+
+
+class Product(BaseProduct, PrintMixin):
     """Class for creating products."""
 
     name: str
@@ -15,6 +19,7 @@ class Product:
         self.__price = price
         self.quantity = quantity
         self.products.append(self)
+        super().__repr__()
 
     def __str__(self):
         """Method for displaying info about a product."""
@@ -32,7 +37,9 @@ class Product:
         """Method for creating new products. If product already exists, its quantity increases by the quantity of
         a newly added product. In case of price conflict, the price is set on a level of a higher one."""
 
-        if type(product) is dict and sorted(product.keys()) == ["description", "name", "price", "quantity"]:
+        if type(product) is dict and all(
+            i in sorted(product.keys()) for i in ["description", "name", "price", "quantity"]
+        ):
 
             if any(obj.name == product.get("name") for obj in cls.products):
 
