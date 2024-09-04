@@ -18,6 +18,11 @@ def product_2():
 
 
 @pytest.fixture
+def zero_quantity_product():
+    return Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 0)
+
+
+@pytest.fixture
 def smartphones():
     return Category(
         "Smartphones",
