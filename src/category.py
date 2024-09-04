@@ -42,3 +42,10 @@ class Category:
     def products_list(self):
         """Method for returning products list in a list form."""
         return self.__products
+
+    def middle_price(self):
+        """Method for calculating average price for products in the list."""
+        try:
+            return round(sum(product.price for product in self.products_list) / self.product_count, 2)
+        except ZeroDivisionError:
+            return 0
