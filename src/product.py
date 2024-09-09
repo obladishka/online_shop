@@ -14,6 +14,8 @@ class Product(BaseProduct, PrintMixin):
 
     def __init__(self, name, description, price, quantity):
         """Product initialization. Parameters needed: product name, description, price and quantity."""
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
         self.name = name
         self.description = description
         self.__price = price

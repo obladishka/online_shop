@@ -14,6 +14,12 @@ def test_product_init(product_1, product_2):
     assert product_2.quantity == 14
 
 
+def test_product_init_zero_quantity():
+    """Testing creation of a product with zero quantity."""
+    with pytest.raises(ValueError, match="Товар с нулевым количеством не может быть добавлен"):
+        Product("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 0)
+
+
 def test_new_product(product_dict):
     """Testing normal work of new product creating method."""
     new_product = Product.new_product(product_dict)

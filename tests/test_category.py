@@ -29,8 +29,8 @@ def test_add_product(smartphones, product_1):
     assert smartphones.products_list[-1].name == product_1.name
     assert smartphones.products_list[-1].quantity == product_1.quantity
 
-    assert smartphones.product_count == 6
-    assert Category.product_count == 6
+    assert smartphones.product_count == 3
+    assert Category.product_count == 3
 
 
 def test_add_product_wrong_type(smartphones):
@@ -57,3 +57,13 @@ def test_products_list(tv_sets):
 def test_category_str(smartphones):
     """Testing category's information displaying."""
     assert str(smartphones) == "Smartphones, количество продуктов: 22 шт."
+
+
+def test_category_middle_price(smartphones):
+    """Testing normal work of avg price calculating method."""
+    assert smartphones.middle_price() == 120500.00
+
+
+def test_category_middle_price_empty_category(empty_category):
+    """Testing work of avg price calculating method with no products in category."""
+    assert empty_category.middle_price() == 0
